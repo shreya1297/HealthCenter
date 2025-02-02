@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/select.css">
+</head>
+
+<body>
+    <!-- Mixins-->
+    <!-- Pen Title-->
+    <div class="pen-title">
+        <h1 style="font-weight: bold; color: #277D6B">Registration</h1>
+    </div>
+    <div class="container">
+        <div class="card"></div>
+        <div class="card">
+            <h1 class="title">Register</h1>
+            <form action="http://localhost/forms/registration/registration.php" method="post">
+                <div class="input-container">
+                    <input type="digit" id="rollNo" required="required" name="rollNo" />
+                    <label for="#{label}">Roll Number</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="input-container">
+                    <input type="#{type}" id="firstName" required="required" name="firstName" />
+                    <label for="#{label}">First Name</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="input-container">
+                    <input type="#{type}" id="lastName" required="required" name="lastName" />
+                    <label for="#{label}">Last Name</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="input-container">
+                    <input type="digit" id="contactNo" required="required" name="contactNo" />
+                    <label for="#{label}">Contact Number</label>
+                    <div class="bar"></div>
+                </div>
+                <script>
+                function validDate(date, theInput) {
+                    var date = document.getElementById("DOB").value;
+                    todayDate = getTodaysDate();
+                    if (date > todayDate)
+                        theInput.value = todayDate;
+                }
+
+                function getTodaysDate() {
+                    date = new Date();
+                    day = date.getDate();
+                    month = date.getMonth() + 1;
+                    year = date.getFullYear();
+
+                    if (month < 10) month = "0" + month;
+                    if (day < 10) day = "0" + day;
+
+                    today = year + "-" + month + "-" + day;
+
+                    return today;
+                }
+                </script>
+                <div class="input-container">
+                    <input required="required" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="DOB" name="DOB" oninput="validDate(this.value, this)">
+                    <label for="DOB">Date Of Birth</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="input-container">
+                    <input type="#{type}" id="branchCode" name="branch" required="required" pattern="[A-Z]{3}" />
+                    <label for="branch">Branch Code</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="styled-select blue semi-square">
+                    <select name="year">
+                        <option value="" disabled selected>Year</option>
+                        <option value="1">First</option>
+                        <option value="2">Second</option>
+                        <option value="3">Third</option>
+                        <option value="4">Fourth</option>
+                        <option value="M">Mtech</option>
+                        <option value="P">PHD</option>
+                    </select>
+                </div>
+                <div class="styled-select blue semi-square">
+                    <select name="hostel">
+                        <option value="" disabled selected>Hostel</option>
+                        <option value="Day Scholar">Day Scholar</option>
+                        <option value="Hostel A">Hostel A</option>
+                        <option value="Hostel B">Hostel B</option>
+                        <option value="Hostel C">Hostel C</option>
+                        <option value="Hostel D">Hostel D</option>
+                        <option value="Hostel E">Hostel E</option>
+                        <option value="Hostel G">Hostel G</option>
+                        <option value="Hostel H">Hostel H</option>
+                        <option value="Hostel I">Hostel I</option>
+                        <option value="Hostel J">Hostel J</option>
+                        <option value="Hostel K">Hostel K</option>
+                        <option value="Hostel L">Hostel L</option>
+                        <option value="Hostel M">Hostel M</option>
+                        <option value="Hostel N">Hostel N</option>
+                        <option value="Hostel PG">Hostel PG</option>
+                    </select>
+                </div>
+                <div class="styled-select blue semi-square">
+                    <select name="bloodgp">
+                        <option value="" disabled selected>Blood Group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">A-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+                <div class="styled-select blue semi-square">
+                    <select name="gender">
+                        <option value="" disabled selected>Gender</option>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                        <option value="O">Others</option>
+                    </select>
+                </div>
+                <div class="button-container">
+                    <button><span>Go</span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
