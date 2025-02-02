@@ -24,7 +24,7 @@ The **Health Center Management System** (designed initially for Thapar Institute
 
 ## 🛠 Tech Stack
 
-- **Frontend**: HTML, CSS
+- **Frontend**: HTML, CSS, Javascript
 - **Backend**: PHP
 - **Database**: MySQL
 
